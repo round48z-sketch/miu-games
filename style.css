@@ -525,8 +525,8 @@ body {
 
 .hero__title-wrap {
   position: relative;
-  width: min(90%, 500px);
-  height: clamp(360px, 58vh, 880px);
+  width: min(100%, 800px);
+  height: clamp(600px, 88vh, 1200px);
   margin: 0.25rem auto 0.4rem;
   display: flex;
   align-items: flex-end;
@@ -1065,7 +1065,7 @@ main {
   }
 
   .hero__title-wrap {
-    height: clamp(420px, 65vh, 880px);
+    height: clamp(640px, 92vh, 1200px);
   }
 
   .hero__tagline {
