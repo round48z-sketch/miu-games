@@ -1,0 +1,7 @@
+# MIU GAMES — AIみう 公式ポータル
+# 公開URLを変更したら、下のSitemapのURLも合わせて更新してください
+
+User-agent: *
+Allow: /
+
+Sitemap: https://miu-games.vercel.app/sitemap.xml

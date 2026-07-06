@@ -1,14 +1,41 @@
 /**
  * MIU GAMES — 設定ファイル
- * ゲームURL・SNSリンクはここを編集するだけで変更できます
+ * ゲームURL・SNSリンク・SEO情報はここを編集するだけで変更できます
  */
 
 const CONFIG = {
   site: {
+    // ★ Vercel公開後、実際のURLに変更してください
+    siteUrl: "https://miu-games.vercel.app",
+    seoTitle: "MIU GAMES｜AIみうの無料ブラウザゲーム",
     title: "MIU GAMES",
-    tagline: "AIみうのゲームセンターへようこそ！",
+    metaDescription:
+      "MIU GAMES｜AIみうの無料ブラウザゲーム。MIU BLOCKS・MIU POPS・MIU BREAKERを今すぐプレイ。ゲームのあとはTikTok・X・Spotifyでみうの世界をもっと楽しもう。",
+    keywords:
+      "AIみう,みう,MIU GAMES,AIみう ゲーム,みう ゲーム,無料ブラウザゲーム,MIU BLOCKS,MIU POPS,MIU BREAKER,無料ゲーム",
+    tagline: "AIみうの無料ゲームセンターへようこそ！",
     titleImage: "title.png",
-    titleAlt: "AIみう",
+    titleAlt: "AIみう（みう）の公式キービジュアル｜ネオンピンクのゲームセンター",
+    ogImage: "title.png",
+    twitter: "@miu_4519",
+    locale: "ja_JP",
+  },
+
+  about: {
+    title: "AIみうについて",
+    paragraphs: [
+      "AIみうは、音楽・ゲーム・SNSで活動するオリジナルAIキャラクターです。",
+      "ゲームを楽しんだら、TikTok・X・SpotifyでもAIみうの世界を楽しんでください。",
+    ],
+    bridge: "みうの世界は、ゲームの外にも続いています。",
+  },
+
+  gamesIntro:
+    "AIみうの世界観で遊べる無料ブラウザゲーム。好きなゲームから、みうの世界に飛び込もう。",
+
+  footer: {
+    heading: "♡ みうの世界をもっと楽しむ ♡",
+    lead: "ゲームのあとに、音楽や動画でもみうとつながろう。",
   },
 
   games: [
@@ -16,25 +43,34 @@ const CONFIG = {
       id: "blocks",
       title: "MIU BLOCKS",
       description: "ブロックを積み上げてハイスコアを目指そう！",
+      seoDescription:
+        "AIみうが主役の落ちものパズルゲーム「MIU BLOCKS」。テトリス風にブロックを積み上げてハイスコアを目指す無料ブラウザゲームです。",
       url: "https://miu-tetris-v2-z.vercel.app",
       icon: "🧱",
       accent: "#ff4fd8",
+      genre: "Puzzle",
     },
     {
       id: "pops",
       title: "MIU POPS",
       description: "連鎖を決めて爽快コンボを狙おう！",
+      seoDescription:
+        "AIみうの世界観で遊ぶ連鎖パズルゲーム「MIU POPS」。玉を消してコンボを決め、爽快にスコアを伸ばす無料ブラウザゲームです。",
       url: "https://miu-pops.vercel.app",
       icon: "✨",
       accent: "#ff6ec7",
+      genre: "Puzzle",
     },
     {
       id: "breaker",
       title: "MIU BREAKER",
       description: "ブロックを破壊してステージクリアを目指そう！",
+      seoDescription:
+        "AIみうテーマのブロック崩しゲーム「MIU BREAKER」。ブロックを破壊してステージをクリアする、懐かしくも新しい無料ブラウザゲームです。",
       url: "https://miu-block-breaker.vercel.app",
       icon: "💥",
       accent: "#ff1493",
+      genre: "Arcade",
     },
   ],
 
@@ -42,21 +78,21 @@ const CONFIG = {
     {
       id: "spotify",
       label: "Spotify",
-      sublabel: "AIみうの音楽を聴く",
+      sublabel: "ゲームのあとは、みうの音楽へ",
       url: "https://open.spotify.com/artist/1R4C6DHAIVCRrwCptYNqNw",
       icon: "spotify",
     },
     {
       id: "x",
       label: "X",
-      sublabel: "最新情報をチェック",
+      sublabel: "みうの日常をのぞいてみて",
       url: "https://x.com/miu_4519",
       icon: "x",
     },
     {
       id: "tiktok",
       label: "TikTok",
-      sublabel: "みうの動画をチェック",
+      sublabel: "みうの動画で世界観を味わう",
       url: "https://www.tiktok.com/@miu_4519",
       icon: "tiktok",
     },
@@ -83,15 +119,17 @@ function renderGames() {
       <div class="game-card__frame">
         <div class="game-card__glow"></div>
         <div class="game-card__inner">
-          <div class="game-card__shine"></div>
+          <div class="game-card__shine" aria-hidden="true"></div>
           <div class="game-card__icon" aria-hidden="true">${game.icon}</div>
           <h3 class="game-card__title">${game.title}</h3>
           <p class="game-card__desc">${game.description}</p>
+          <p class="game-card__seo">${game.seoDescription}</p>
           <a
             class="game-card__btn"
             href="${game.url}"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="${game.title}をプレイする — ${game.seoDescription}"
           >
             <span class="game-card__btn-icon" aria-hidden="true">🎮</span>
             <span>プレイする</span>
@@ -271,7 +309,7 @@ function initParticles() {
 }
 
 function initScrollFadeIn() {
-  const targets = document.querySelectorAll(".fade-in, .fade-in-card, .social-btn");
+  const targets = document.querySelectorAll(".fade-in, .fade-in-card, .social-btn, .about");
 
   if (!("IntersectionObserver" in window)) {
     targets.forEach((el) => el.classList.add("is-visible"));
@@ -300,11 +338,122 @@ function initScrollFadeIn() {
   });
 }
 
+function initSeo() {
+  const { site } = CONFIG;
+  const baseUrl = site.siteUrl.replace(/\/$/, "");
+
+  document.title = site.seoTitle;
+
+  const setMeta = (attr, key, content) => {
+    let el = document.querySelector(`meta[${attr}="${key}"]`);
+    if (!el) {
+      el = document.createElement("meta");
+      el.setAttribute(attr, key);
+      document.head.appendChild(el);
+    }
+    el.setAttribute("content", content);
+  };
+
+  setMeta("name", "description", site.metaDescription);
+  setMeta("name", "keywords", site.keywords);
+  setMeta("property", "og:title", site.seoTitle);
+  setMeta("property", "og:description", site.metaDescription);
+  setMeta("property", "og:url", `${baseUrl}/`);
+  setMeta("property", "og:image", `${baseUrl}/${site.ogImage}`);
+  setMeta("name", "twitter:title", site.seoTitle);
+  setMeta("name", "twitter:description", site.metaDescription);
+  setMeta("name", "twitter:image", `${baseUrl}/${site.ogImage}`);
+
+  let canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    canonical = document.createElement("link");
+    canonical.rel = "canonical";
+    document.head.appendChild(canonical);
+  }
+  canonical.href = `${baseUrl}/`;
+
+  const ldEl = document.getElementById("structured-data");
+  if (ldEl) {
+    const graph = {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": `${baseUrl}/#website`,
+          url: `${baseUrl}/`,
+          name: site.title,
+          description: site.metaDescription,
+          inLanguage: "ja",
+          publisher: { "@id": `${baseUrl}/#person` },
+        },
+        {
+          "@type": "Person",
+          "@id": `${baseUrl}/#person`,
+          name: "AIみう",
+          alternateName: ["みう", "AI Miu"],
+          description: "ゲーム・音楽・SNSで活動するバーチャルキャラクター",
+          url: `${baseUrl}/`,
+          sameAs: CONFIG.social.map((s) => s.url),
+        },
+        {
+          "@type": "WebPage",
+          "@id": `${baseUrl}/#webpage`,
+          url: `${baseUrl}/`,
+          name: site.seoTitle,
+          description: site.metaDescription,
+          isPartOf: { "@id": `${baseUrl}/#website` },
+          about: { "@id": `${baseUrl}/#person` },
+          inLanguage: "ja",
+        },
+        {
+          "@type": "ItemList",
+          "@id": `${baseUrl}/#gamelist`,
+          name: "AIみうのゲーム一覧",
+          description: "AIみうの世界観を楽しめる無料ブラウザゲーム",
+          itemListElement: CONFIG.games.map((game, i) => ({
+            "@type": "ListItem",
+            position: i + 1,
+            item: {
+              "@type": "VideoGame",
+              name: game.title,
+              description: game.seoDescription,
+              url: game.url,
+              genre: game.genre,
+              gamePlatform: "Web browser",
+              offers: { "@type": "Offer", price: "0", priceCurrency: "JPY" },
+            },
+          })),
+        },
+      ],
+    };
+    ldEl.textContent = JSON.stringify(graph);
+  }
+}
+
+function renderAbout() {
+  const { about, footer } = CONFIG;
+
+  const text1 = document.getElementById("about-text-1");
+  const text2 = document.getElementById("about-text-2");
+  const bridge = document.getElementById("about-bridge");
+  const footerHeading = document.getElementById("footer-heading");
+  const footerLead = document.getElementById("footer-lead");
+
+  if (text1 && about.paragraphs[0]) text1.textContent = about.paragraphs[0];
+  if (text2 && about.paragraphs[1]) text2.textContent = about.paragraphs[1];
+  if (bridge) bridge.textContent = about.bridge;
+  if (footerHeading) footerHeading.textContent = footer.heading;
+  if (footerLead) footerLead.textContent = footer.lead;
+}
+
 function init() {
-  document.title = CONFIG.site.title;
+  initSeo();
 
   const tagline = document.getElementById("tagline");
   if (tagline) tagline.textContent = CONFIG.site.tagline;
+
+  const gamesIntro = document.getElementById("games-intro");
+  if (gamesIntro) gamesIntro.textContent = CONFIG.gamesIntro;
 
   const titleImg = document.getElementById("title-img");
   if (titleImg) {
@@ -313,6 +462,7 @@ function init() {
   }
 
   renderGames();
+  renderAbout();
   renderSocial();
   initParticles();
   initScrollFadeIn();

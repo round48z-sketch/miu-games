@@ -3,19 +3,139 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIU GAMES｜AIみうの無料ブラウザゲーム</title>
     <meta
       name="description"
-      content="AIみうの公式ゲームポータル — MIU BLOCKS、MIU POPS、MIU BREAKERをプレイしよう！"
+      content="MIU GAMES｜AIみうの無料ブラウザゲーム。MIU BLOCKS・MIU POPS・MIU BREAKERを今すぐプレイ。ゲームのあとはTikTok・X・Spotifyでみうの世界をもっと楽しもう。"
     />
+    <meta
+      name="keywords"
+      content="AIみう,みう,MIU GAMES,AIみう ゲーム,みう 公式,MIU BLOCKS,MIU POPS,MIU BREAKER,バーチャル,無料ゲーム"
+    />
+    <meta name="author" content="AIみう" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://miu-games.vercel.app/" />
     <meta name="theme-color" content="#ff1493" />
-    <title>MIU GAMES</title>
+
+    <!-- OGP（SNSシェア用） -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="MIU GAMES" />
+    <meta property="og:title" content="MIU GAMES｜AIみうの無料ブラウザゲーム" />
+    <meta
+      property="og:description"
+      content="MIU BLOCKS・MIU POPS・MIU BREAKERの無料ブラウザゲーム。プレイしたあとは、TikTok・X・SpotifyでAIみうの世界へ。"
+    />
+    <meta property="og:url" content="https://miu-games.vercel.app/" />
+    <meta property="og:image" content="https://miu-games.vercel.app/title.png" />
+    <meta property="og:image:alt" content="AIみう（みう）の公式キービジュアル" />
+
+    <!-- X（Twitter）カード -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@miu_4519" />
+    <meta name="twitter:title" content="MIU GAMES｜AIみうの無料ブラウザゲーム" />
+    <meta
+      name="twitter:description"
+      content="MIU BLOCKS・MIU POPS・MIU BREAKERの無料ブラウザゲーム。プレイしたあとは、TikTok・X・SpotifyでAIみうの世界へ。"
+    />
+    <meta name="twitter:image" content="https://miu-games.vercel.app/title.png" />
+    <meta name="twitter:image:alt" content="AIみう（みう）の公式キービジュアル" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=M+PLUS+Rounded+1c:wght@400;700;900&family=Orbitron:wght@700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=11" />
+    <link rel="stylesheet" href="style.css?v=12" />
+
+    <!-- 構造化データ（Googleがサイト内容を理解しやすくする） -->
+    <script type="application/ld+json" id="structured-data">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://miu-games.vercel.app/#website",
+            "url": "https://miu-games.vercel.app/",
+            "name": "MIU GAMES",
+            "description": "AIみう（みう）の公式ポータルサイト。無料ブラウザゲームとSNSでみうの世界を楽しもう。",
+            "inLanguage": "ja",
+            "publisher": { "@id": "https://miu-games.vercel.app/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://miu-games.vercel.app/#person",
+            "name": "AIみう",
+            "alternateName": ["みう", "AI Miu"],
+            "description": "ゲーム・音楽・SNSで活動するバーチャルキャラクター",
+            "url": "https://miu-games.vercel.app/",
+            "sameAs": [
+              "https://x.com/miu_4519",
+              "https://www.tiktok.com/@miu_4519",
+              "https://open.spotify.com/artist/1R4C6DHAIVCRrwCptYNqNw"
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://miu-games.vercel.app/#webpage",
+            "url": "https://miu-games.vercel.app/",
+            "name": "MIU GAMES｜AIみうの無料ブラウザゲーム",
+            "description": "MIU BLOCKS・MIU POPS・MIU BREAKERの無料ブラウザゲーム。プレイ後はTikTok・X・SpotifyでAIみうの世界へ。",
+            "isPartOf": { "@id": "https://miu-games.vercel.app/#website" },
+            "about": { "@id": "https://miu-games.vercel.app/#person" },
+            "inLanguage": "ja"
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://miu-games.vercel.app/#gamelist",
+            "name": "AIみうのゲーム一覧",
+            "description": "AIみうの世界観を楽しめる無料ブラウザゲーム",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "VideoGame",
+                  "name": "MIU BLOCKS",
+                  "description": "AIみうが主役の落ちものパズルゲーム。ブロックを積み上げてハイスコアを目指す無料ブラウザゲーム。",
+                  "url": "https://miu-tetris-v2-z.vercel.app",
+                  "genre": "Puzzle",
+                  "gamePlatform": "Web browser",
+                  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "VideoGame",
+                  "name": "MIU POPS",
+                  "description": "AIみうの世界観で遊ぶ連鎖パズルゲーム。コンボを決めて爽快にスコアを伸ばす無料ブラウザゲーム。",
+                  "url": "https://miu-pops.vercel.app",
+                  "genre": "Puzzle",
+                  "gamePlatform": "Web browser",
+                  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "VideoGame",
+                  "name": "MIU BREAKER",
+                  "description": "AIみうテーマのブロック崩しゲーム。ブロックを破壊してステージクリアを目指す無料ブラウザゲーム。",
+                  "url": "https://miu-block-breaker.vercel.app",
+                  "genre": "Arcade",
+                  "gamePlatform": "Web browser",
+                  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "JPY" }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <canvas id="particles" aria-hidden="true"></canvas>
@@ -51,17 +171,20 @@
         <p class="hero__badge">✦ OFFICIAL PORTAL ✦</p>
 
         <h1 class="hero__logo">
-          <span class="hero__logo-miu">MIU</span>
-          <span class="hero__logo-games">GAMES</span>
+          <span class="sr-only">AIみうの無料ブラウザゲーム </span>
+          <span class="hero__logo-miu" aria-hidden="true">MIU</span>
+          <span class="hero__logo-games" aria-hidden="true">GAMES</span>
         </h1>
 
         <div class="hero__title-wrap">
-          <div class="hero__title-glow"></div>
+          <div class="hero__title-glow" aria-hidden="true"></div>
           <img
             id="title-img"
             class="hero__title-img"
             src="title.png"
-            alt="AIみう"
+            alt="AIみう（みう）の公式キービジュアル｜ネオンピンクのゲームセンター"
+            width="941"
+            height="1672"
           />
         </div>
 
@@ -71,21 +194,36 @@
       <main class="fade-in fade-in--delay-1">
         <section class="games" aria-labelledby="games-heading">
           <h2 id="games-heading" class="section-title">
-            <span class="section-title__line"></span>
+            <span class="section-title__line" aria-hidden="true"></span>
             <span class="section-title__text">GAME LIST</span>
-            <span class="section-title__line"></span>
+            <span class="sr-only"> — AIみうの無料ゲーム一覧</span>
+            <span class="section-title__line" aria-hidden="true"></span>
           </h2>
+          <p class="games__intro" id="games-intro"></p>
           <div id="game-list" class="game-list"></div>
         </section>
       </main>
 
-      <footer class="footer fade-in fade-in--delay-2">
-        <p class="footer__label">♡ CONNECT WITH MIU ♡</p>
-        <nav id="social-links" class="social-links" aria-label="SNSリンク"></nav>
+      <section class="about fade-in fade-in--delay-2" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="about__title">
+          <span class="about__title-icon" aria-hidden="true">♡</span>
+          AIみうについて
+        </h2>
+        <div class="about__card">
+          <p class="about__text" id="about-text-1"></p>
+          <p class="about__text" id="about-text-2"></p>
+          <p class="about__bridge" id="about-bridge"></p>
+        </div>
+      </section>
+
+      <footer class="footer fade-in fade-in--delay-3">
+        <h2 class="footer__label" id="footer-heading"></h2>
+        <p class="footer__lead" id="footer-lead"></p>
+        <nav id="social-links" class="social-links" aria-label="AIみうの公式SNSリンク"></nav>
         <p class="footer__copy">&copy; AI MIU OFFICIAL PORTAL</p>
       </footer>
     </div>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=7"></script>
   </body>
 </html>
