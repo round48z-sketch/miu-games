@@ -926,12 +926,6 @@ main {
   }
 }
 
-@media (min-width: 960px) {
-  .stamp-list {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
 .stamp-card {
   display: flex;
   flex-direction: column;

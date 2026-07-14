@@ -1,5 +1,5 @@
 /**
- * /stamps ページ用スクリプト
+ * stamps.html ページ用スクリプト
  * スタンプ一覧は stamps-data.js の STAMPS 配列から自動生成されます
  */
 
