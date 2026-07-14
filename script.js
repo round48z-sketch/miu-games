@@ -25,7 +25,7 @@ const CONFIG = {
     title: "AIみうについて",
     paragraphs: [
       "AIみうは、音楽・ゲーム・SNSで活動するオリジナルAIキャラクターです。",
-      "ゲームを楽しんだら、TikTok・X・SpotifyでもAIみうの世界を楽しんでください。",
+      "ゲームやLINEスタンプを楽しんだら、TikTok・X・SpotifyでもAIみうの世界を楽しんでください。",
     ],
     bridge: "みうの世界は、ゲームの外にも続いています。",
   },
@@ -309,7 +309,9 @@ function initParticles() {
 }
 
 function initScrollFadeIn() {
-  const targets = document.querySelectorAll(".fade-in, .fade-in-card, .social-btn, .about");
+  const targets = document.querySelectorAll(
+    ".fade-in, .fade-in-card, .social-btn, .about, .stamps-promo"
+  );
 
   if (!("IntersectionObserver" in window)) {
     targets.forEach((el) => el.classList.add("is-visible"));
@@ -446,6 +448,20 @@ function renderAbout() {
   if (footerLead) footerLead.textContent = footer.lead;
 }
 
+function renderStampsPromo() {
+  if (typeof STAMPS_PROMO === "undefined") return;
+
+  const title = document.getElementById("stamps-promo-heading");
+  const desc = document.getElementById("stamps-promo-desc");
+  const btn = document.getElementById("stamps-promo-btn");
+  const btnLabel = document.getElementById("stamps-promo-btn-label");
+
+  if (title) title.textContent = STAMPS_PROMO.title;
+  if (desc) desc.textContent = STAMPS_PROMO.description;
+  if (btn) btn.href = STAMPS_PROMO.href;
+  if (btnLabel) btnLabel.textContent = STAMPS_PROMO.buttonLabel;
+}
+
 function init() {
   initSeo();
 
@@ -462,6 +478,7 @@ function init() {
   }
 
   renderGames();
+  renderStampsPromo();
   renderAbout();
   renderSocial();
   initParticles();

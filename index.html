@@ -47,7 +47,7 @@
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=M+PLUS+Rounded+1c:wght@400;700;900&family=Orbitron:wght@700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css?v=12" />
+    <link rel="stylesheet" href="style.css?v=13" />
 
     <!-- 構造化データ（Googleがサイト内容を理解しやすくする） -->
     <script type="application/ld+json" id="structured-data">
@@ -202,6 +202,18 @@
           <p class="games__intro" id="games-intro"></p>
           <div id="game-list" class="game-list"></div>
         </section>
+
+        <section class="stamps-promo fade-in fade-in--delay-2" aria-labelledby="stamps-promo-heading">
+          <div class="stamps-promo__card">
+            <div class="stamps-promo__icon" aria-hidden="true">💬</div>
+            <h2 id="stamps-promo-heading" class="stamps-promo__title"></h2>
+            <p class="stamps-promo__desc" id="stamps-promo-desc"></p>
+            <a class="stamps-promo__btn" id="stamps-promo-btn" href="/stamps/">
+              <span id="stamps-promo-btn-label"></span>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6z"/></svg>
+            </a>
+          </div>
+        </section>
       </main>
 
       <section class="about fade-in fade-in--delay-2" aria-labelledby="about-heading">
@@ -224,6 +236,7 @@
       </footer>
     </div>
 
-    <script src="script.js?v=7"></script>
+    <script src="stamps-data.js?v=1"></script>
+    <script src="script.js?v=8"></script>
   </body>
 </html>
